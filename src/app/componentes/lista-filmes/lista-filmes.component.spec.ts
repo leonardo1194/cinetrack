@@ -1,0 +1,24 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ListaFilmesComponent } from './lista-filmes.component';
+import { NavFiltrosComponent } from '../nav-filtros/nav-filtros.component';
+
+describe('ListaFilmesComponent', () => {
+  let component: ListaFilmesComponent;
+  let fixture: ComponentFixture<ListaFilmesComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ListaFilmesComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(ListaFilmesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

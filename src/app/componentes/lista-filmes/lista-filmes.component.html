@@ -1,0 +1,15 @@
+<section class="lista-filmes container">
+  <h1 class="titulo-secao">Minha lista de filmes</h1>
+  <nav>
+    <app-nav-filtros
+      (filtrarGenero)="exibirPorGenero()"
+      (filtrarTodos)="exibirTodos()"
+    ></app-nav-filtros>
+  </nav>
+</section>
+
+<div class="grid-filmes">
+    @for (filme of listarFilmes; track filme.id) {
+      <app-card-filme [filme]="filme"></app-card-filme>
+    }
+  </div>

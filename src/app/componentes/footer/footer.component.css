@@ -1,0 +1,13 @@
+footer {
+  height: 40px;
+  background-color: #000;
+  font-family: var(--font-secundaria);
+  color: #fff;
+  margin-top: 40px;
+}
+
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

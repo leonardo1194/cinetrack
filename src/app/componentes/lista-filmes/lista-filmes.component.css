@@ -1,0 +1,11 @@
+.grid-filmes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 262px);
+  gap: 32px 16px;
+  justify-content: center;
+}
+
+.lista-filmes h1 {
+  text-align: center;
+  padding: 24px;
+}

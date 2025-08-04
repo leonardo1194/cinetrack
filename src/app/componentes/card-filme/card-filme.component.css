@@ -1,0 +1,18 @@
+.card-filme {
+  max-width: 100%;
+  display: block;
+  padding: 0;
+}
+
+.capa img {
+  width: 100%;
+  min-height: 393px;
+  object-fit: cover;
+}
+
+.card-filme h2, h3 {
+  margin: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,29 @@
+h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: var(--font-primaria);
+  font-weight: var(--font-weight-normal);
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.filtro-btn {
+  margin: auto 24px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color:white;
+  font-family: var(--font-secundaria);
+}
+
+.filtro-btn:hover {
+  background-color: var(--color-secundaria);
+  cursor: pointer;
+}

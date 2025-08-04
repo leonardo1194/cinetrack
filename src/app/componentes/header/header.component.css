@@ -1,0 +1,28 @@
+header {
+  height: 80px;
+  background-color: #000;
+  font-family: var(--font-primaria);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: #fff;
+}
+
+header .container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-lista ul li {
+  display: inline-block;
+  padding: 16px;
+}
+
+.nav-lista ul li:last-child {
+  padding-right: 0;
+}
+
+.nav-lista a {
+  color: #fff;
+  text-decoration: none;
+}

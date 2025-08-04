@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-fundo: #00010A;
+  --color-primaria: #010D26;
+  --color-secundaria: #169EF2;
+  --font-primaria: 'Montserrat', 'sans-serif';
+  --font-secundaria: 'Inter', 'sans-serif';
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1652px;
+  margin: auto;
+}
+
+h1, h2 {
+  font-family: var(--font-primaria);
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-family: var(--font-secundaria);
+  font-weight: var(--font-weight-light);
+  font-size: 1rem;
+}

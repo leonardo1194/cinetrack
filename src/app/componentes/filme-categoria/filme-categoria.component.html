@@ -1,0 +1,7 @@
+<section class="filme-categoria">
+  <div class="grid-filmes">
+    @for (filme of listarFilmes; track filme.id) {
+      <app-card-filme [filme]="filme"></app-card-filme>
+    }
+  </div>
+</section>
