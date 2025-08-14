@@ -1,18 +1,36 @@
 .card-filme {
   max-width: 100%;
-  display: block;
   padding: 0;
+  position: relative;
 }
 
 .capa img {
   width: 100%;
-  min-height: 393px;
+  height: 393px;
   object-fit: cover;
 }
 
-.card-filme h2, h3 {
-  margin: auto;
+.info-filme h2, h3 {
+  margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.info-filme > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorito {
+  background: none;
+  border: none;
+  color: gold;
+  cursor: pointer;
+  font-size: 1.2rem;
 }

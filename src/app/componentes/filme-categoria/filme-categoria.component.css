@@ -1,0 +1,6 @@
+.filme-categoria h3 {
+  margin: 16px auto;
+  text-decoration: underline 4px solid var(--color-secundaria);
+  text-underline-offset: 4px;
+  font-weight: var(--font-weight-bold);
+}

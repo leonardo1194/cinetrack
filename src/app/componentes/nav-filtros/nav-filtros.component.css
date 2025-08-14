@@ -1,11 +1,13 @@
+.seccao-filtro {
+  margin: auto;
+}
+
 h3 {
   text-align: center;
-  font-size: 1.3rem;
-  font-family: var(--font-primaria);
-  font-weight: var(--font-weight-normal);
 }
 
 ul {
+  padding: 0;
   text-align: center;
 }
 
@@ -15,15 +17,11 @@ li {
 }
 
 .filtro-btn {
-  margin: auto 24px;
-  padding: 8px 16px;
-  border-radius: 8px;
+  margin: 8px;
+  padding: 8px 12px;
   border: none;
-  background-color:white;
-  font-family: var(--font-secundaria);
 }
 
-.filtro-btn:hover {
+.btn-ativo {
   background-color: var(--color-secundaria);
-  cursor: pointer;
 }

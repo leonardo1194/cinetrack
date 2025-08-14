@@ -6,3 +6,8 @@ export interface FilmeInterface {
   favorito: boolean;
   capa: string
 }
+
+export interface DadosAgrupados {
+  tituloCategoria: string;
+  filmes: FilmeInterface[]
+}

@@ -1,6 +1,13 @@
-<h3>Explorar por</h3>
-<ul>
-  <li><button class="filtro-btn" (click)="filtrarTodos.emit()">Todos</button></li>
-  <li><button class="filtro-btn" (click)="filtrarGenero.emit()">Gênero</button></li>
-  <li><button class="filtro-btn">Ano de Lançamento</button></li>
-</ul>
+<section class="seccao-filtro">
+  <h3>Organizar por</h3>
+  <ul>
+    @for (botao of listaBotoes; track botao.id) {
+      <li><button
+        class="filtro-btn"
+        [class.btn-ativo]="botaoSelecionado === botao.id"
+        (click)="botao.acao(); botaoSelecionado = botao.id"
+        > {{ botao.nome }}
+      </button></li>
+    }
+  </ul>
+</section>

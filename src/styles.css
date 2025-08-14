@@ -47,6 +47,19 @@ h2 {
 
 h3 {
   font-family: var(--font-secundaria);
-  font-weight: var(--font-weight-light);
-  font-size: 1rem;
+  font-weight: var(--font-weight-normal);
+  font-size: 1.3rem;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  background-color:white;
+  font-family: var(--font-secundaria);
+  font-size: .8rem;
+}
+
+button:hover {
+  background-color: var(--color-secundaria);
+  cursor: pointer;
 }

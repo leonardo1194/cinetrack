@@ -9,4 +9,8 @@ import { FilmeInterface } from './interface-filme';
 })
 export class CardFilmeComponent {
   filme = input.required<FilmeInterface>()
+
+  alternarFavorito() {
+    this.filme().favorito = !this.filme().favorito
+  }
 }

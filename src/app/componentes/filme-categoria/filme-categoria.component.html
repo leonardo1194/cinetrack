@@ -1,4 +1,5 @@
 <section class="filme-categoria">
+  <h3 class="container">{{ tituloCategoria() }}</h3>
   <div class="grid-filmes">
     @for (filme of listarFilmes; track filme.id) {
       <app-card-filme [filme]="filme"></app-card-filme>

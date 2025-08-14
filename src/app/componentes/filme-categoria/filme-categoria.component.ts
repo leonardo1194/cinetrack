@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { CardFilmeComponent } from '../card-filme/card-filme.component';
 import { FilmeInterface } from '../card-filme/interface-filme';
 
@@ -10,5 +10,5 @@ import { FilmeInterface } from '../card-filme/interface-filme';
 })
 export class FilmeCategoriaComponent {
   @Input() listarFilmes: FilmeInterface[] = []
-  tituloCategoria = ""
+  tituloCategoria = input.required<string>();
 }

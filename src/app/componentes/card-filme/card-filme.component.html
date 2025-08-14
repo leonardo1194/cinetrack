@@ -4,6 +4,11 @@
   </div>
   <div class="info-filme">
     <h2 class="texto-titulo">{{filme().titulo}}</h2>
-    <h3 class="texto-ano">{{filme().ano}}</h3>
+    <div>
+      <h3 class="texto-ano">{{filme().ano}}</h3>
+      <button class="favorito" (click)="alternarFavorito()">
+        <span>{{ filme().favorito === false ? '&#9734;' : '&#9733;' }}</span>
+      </button>
+    </div>
   </div>
 </section>

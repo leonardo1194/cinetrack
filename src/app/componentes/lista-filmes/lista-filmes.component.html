@@ -2,14 +2,72 @@
   <h1 class="titulo-secao">Minha lista de filmes</h1>
   <nav>
     <app-nav-filtros
-      (filtrarGenero)="exibirPorGenero()"
-      (filtrarTodos)="exibirTodos()"
+      (ordenarRecentes)="agruparRecentes()"
+      (ordenarGenero)="mapearPorGenero()"
+      (ordenarAno)="mapearPorAno()"
+      (ordenarAlfabetico)="mapearAlfabetico()"
+      (ordenarFavoritos)="mapearFavoritos()"
     ></app-nav-filtros>
   </nav>
 </section>
 
-<div class="grid-filmes">
+@if (modoDeExibicao === "recentesAtivo") {
+  <h3 class="titulo-categoria container">Recentes</h3>
+  <div class="grid-filmes">
+      @for (filme of listarFilmes; track filme.id) {
+        <app-card-filme [filme]="filme"></app-card-filme>
+      }
+    </div>
+}
+
+@if (modoDeExibicao === "generoAtivo") {
+   @for (grupo of filmesAgrupados; track grupo.tituloCategoria) {
+    <h3 class="titulo-categoria container">{{ grupo.tituloCategoria }}</h3>
+    <div class="grid-filmes">
+      @for (filme of grupo.filmes; track filme.id) {
+        <app-card-filme [filme]="filme"></app-card-filme>
+      }
+    </div>
+   }
+}
+
+@if (modoDeExibicao === "anoAtivo") {
+  @for (grupo of filmesAgrupados; track grupo.tituloCategoria) {
+    <h3 class="titulo-categoria container">{{ grupo.tituloCategoria }}</h3>
+    <div class="grid-filmes">
+      @for (filme of grupo.filmes; track filme.id) {
+        <app-card-filme [filme]="filme"></app-card-filme>
+      }
+    </div>
+  }
+}
+
+@if (modoDeExibicao === "alfabeticoAtivo") {
+  <h3 class="titulo-categoria container">Ordem alfabética:
+    <button (click)="alternarOrdem()">
+      {{ ordemAtual === 'asc' ? 'A - Z' : 'Z - A'}}
+    </button>
+    <button class="botao-icone" (click)="alternarOrdem()">
+      <span>&#9650;</span>
+      <span>&#9660;</span>
+    </button>
+  </h3>
+  <div class="grid-filmes">
     @for (filme of listarFilmes; track filme.id) {
       <app-card-filme [filme]="filme"></app-card-filme>
     }
   </div>
+}
+
+@if (modoDeExibicao === "favoritosAtivo") {
+  @if (listarFilmes.length === 0) {
+    <h3 class="titulo-categoria container sem-filmes">Você ainda não possui filmes favoritos</h3> 
+  } @else {
+    <h3 class="titulo-categoria container">Favoritos</h3>
+  }
+  <div class="grid-filmes">
+    @for (filme of listarFilmes; track filme.id) {
+      <app-card-filme [filme]="filme"></app-card-filme>
+    }
+  </div>
+}
