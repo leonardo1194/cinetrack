@@ -1,7 +1,6 @@
 .card-filme {
   max-width: 100%;
   padding: 0;
-  position: relative;
 }
 
 .capa img {
@@ -10,15 +9,16 @@
   object-fit: cover;
 }
 
-.info-filme h2, h3 {
+.capa img:hover {
+  opacity: 50%;
+}
+
+.info-filme h2 {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-h3 {
-  font-size: 1.2rem;
+  
 }
 
 .info-filme > div {
@@ -27,10 +27,24 @@ h3 {
   align-items: center;
 }
 
-.favorito {
+.btn-favorito {
   background: none;
   border: none;
   color: gold;
   cursor: pointer;
   font-size: 1.2rem;
+}
+
+.btn-assistiu {
+  background: none;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.btn-assistiu .icone-assistiu {
+  color: var(--color-secundaria);
+}
+
+.btn-assistiu .icone-nao-assistiu {
+  color: #F44336;
 }

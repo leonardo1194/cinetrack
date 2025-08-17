@@ -23,7 +23,7 @@ export class NavFiltrosComponent {
     { id: 3, nome: 'Ano de Lançamento', acao: () => this.ordenarAno.emit() },
     { id: 4, nome: 'A - Z', acao: () => this.ordenarAlfabetico.emit() },
     { id: 5, nome: 'Favoritos', acao: () => this.ordenarFavoritos.emit() },
-    // { id: 6, nome: 'Assistidos', acao: () => this.ordenarAssistidos.emit() },
+    { id: 6, nome: 'Assistidos', acao: () => this.ordenarAssistidos.emit() },
   ]
 
   }

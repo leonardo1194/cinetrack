@@ -4,11 +4,24 @@
   </div>
   <div class="info-filme">
     <h2 class="texto-titulo">{{filme().titulo}}</h2>
+    
     <div>
-      <h3 class="texto-ano">{{filme().ano}}</h3>
-      <button class="favorito" (click)="alternarFavorito()">
-        <span>{{ filme().favorito === false ? '&#9734;' : '&#9733;' }}</span>
-      </button>
+      <time [dateTime]="filme().ano" class="texto-ano">{{filme().ano}}</time>
+      <div>
+        <button
+          class="btn-assistiu"
+          [title]="filme().assistiu ? 'Já assisti' : 'Quero assistir'"
+          (click)="alternarAssistiu()">
+            <span
+              [class.icone-assistiu]="filme().assistiu"
+              [class.icone-nao-assistiu]="!filme().assistiu">
+                {{ filme().assistiu === false ? '&#x2716;' : '&#x2714;' }}
+            </span>
+        </button>
+        <button class="btn-favorito" title="Marcar favorito" (click)="alternarFavorito()">
+          <span>{{ filme().favorito === false ? '&#9734;' : '&#9733;' }}</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>

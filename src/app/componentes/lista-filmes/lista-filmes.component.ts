@@ -74,11 +74,20 @@ ngOnInit(): void {
   }
 
   mapearAlfabetico() {
+    this.modoDeExibicao = "alfabeticoAtivo"
     if (this.ordemAtual === "asc") {
       this.ordenarAZ()
     } else {
-      this.ordenarZA()
+      this.listarFilmes = [...mockFilmes].sort((primeiro, ultimo) => 
+      ultimo.titulo.localeCompare(primeiro.titulo)
+    )
     }
+  }
+
+  ordenarAZ() {
+    this.listarFilmes.sort((primeiro, ultimo) => 
+      primeiro.titulo.localeCompare(ultimo.titulo)
+    )
   }
 
   alternarOrdem() {
@@ -90,29 +99,30 @@ ngOnInit(): void {
     this.mapearAlfabetico()
   }
 
-  ordenarAZ() {
-    this.modoDeExibicao = "alfabeticoAtivo"
-    this.listarFilmes = [...mockFilmes].sort((primeiro, ultimo) => 
-      primeiro.titulo.localeCompare(ultimo.titulo)
-    )
-  }
-
-  ordenarZA() {
-    this.modoDeExibicao = "alfabeticoAtivo"
-    this.listarFilmes = [...mockFilmes].sort((primeiro, ultimo) => 
-      ultimo.titulo.localeCompare(primeiro.titulo)
-    )
-  }
-
   mapearFavoritos() {
     this.modoDeExibicao = "favoritosAtivo"
-
     this.listarFilmes = mockFilmes.filter(filme => filme.favorito)
-    this.listarFilmes.sort((primeiro, ultimo) => 
-      primeiro.titulo.localeCompare(ultimo.titulo)
-    )
+    this.ordenarAZ()
   }
   
+  mapearAssistidos() {
+    this.modoDeExibicao = "assistidosAtivo"
+
+    this.listaDeCategoria = new Map()
+    this.listaDeCategoria.set("Filmes assistidos",[])
+    this.listaDeCategoria.set("Filmes não assistidos",[])
+
+    mockFilmes.forEach((filme:FilmeInterface) => {
+      if (filme.assistiu) {
+        this.listaDeCategoria.get("Filmes assistidos")?.push(filme)
+      } else {
+        this.listaDeCategoria.get("Filmes não assistidos")?.push(filme)
+      }
+    })
+
+    this.agrupar("assistiu")
+  }
+
   agrupar(chave:string) {
     this.categoria = Array.from(this.listaDeCategoria.keys())
     this.categoria.sort()

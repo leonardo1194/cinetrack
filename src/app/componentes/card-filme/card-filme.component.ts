@@ -1,5 +1,6 @@
 import { Component, input} from '@angular/core';
 import { FilmeInterface } from './interface-filme';
+import { NgClass } from "../../../../node_modules/@angular/common/common_module.d-NEF7UaHr";
 
 @Component({
   selector: 'app-card-filme',
@@ -12,5 +13,9 @@ export class CardFilmeComponent {
 
   alternarFavorito() {
     this.filme().favorito = !this.filme().favorito
+  }
+
+  alternarAssistiu() {
+    this.filme().assistiu = !this.filme().assistiu
   }
 }

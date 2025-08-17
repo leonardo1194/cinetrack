@@ -4,6 +4,7 @@ export interface FilmeInterface {
   genero: string;
   ano: string;
   favorito: boolean;
+  assistiu: boolean
   capa: string
 }
 

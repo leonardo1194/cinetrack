@@ -33,7 +33,7 @@ body {
   margin: auto;
 }
 
-h1, h2 {
+h1, h2, h3, time {
   font-family: var(--font-primaria);
 }
 
@@ -45,10 +45,14 @@ h2 {
   font-size: 1.3rem;
 }
 
-h3 {
-  font-family: var(--font-secundaria);
-  font-weight: var(--font-weight-normal);
+time {
+  font-weight: var(--font-weight-light);
   font-size: 1.3rem;
+}
+
+p {
+  font-family: var(--font-secundaria);
+  font-weight: var(--font-weight-light);
 }
 
 button {
